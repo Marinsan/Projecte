@@ -5,13 +5,12 @@
  */
 package projecte;
 
-import java.util.Scanner; 
-        
-/**
-*
-* @author alumne
-*/
+import java.util.Scanner;
 
+/**
+ *
+ * @author alumne
+ */
 public class Projecte {
 
     /**
@@ -23,7 +22,8 @@ public class Projecte {
         String model = null, nom = null;
         int carregador = 0, menu;
         double preu = 0.0;
-        boolean camuflatge = false;
+        boolean camuflatge = false boolean omplit = false;
+        char portacamuflatge = ' ';
 
         do {
             System.out.println("\n\nMenú de l'aplicació:");
@@ -40,15 +40,44 @@ public class Projecte {
                     break;
 
                 case 1:
-                 
+                    if (!omplit) {
+                        System.out.println("Introdueix les dades");
+                        System.out.println("Model: ");
+                        model = ent.skip("[\r\n]*").nextLine();
+                        System.out.println("Nom: ");
+                        nom = ent.skip("[\r\n]*").nextLine();
+                        System.out.println("Carregador: ");
+                        carregador = ent.skip("[\r\n]*").nextInt();
+                        System.out.println("Preu:");
+                        preu = ent.skip("[\r\n]*").nextDouble();
+                        System.out.println("Camuflatge (Si/No): ");
+                        do {
+                            portacamuflatge = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (portacamuflatge != 'S' && portacamuflatge != 'N');
+                        camuflatge = (portacamuflatge == 'S');
+                        
+                        omplit = true;
+                    } else {
+                        System.out.println("Ja has introduït dades, si vols omplir-lo esborra'l primer.");
+                    }
+                    break;
+
+                case 2:
+                    
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+
                 default:
                     System.out.println("Opció erronea.");
-                }
-           } while (!(menu==0));
-        
-        
-        
-    
-        }
+            }
+        } while (!(menu == 0));
+
+    } 
 
 }
