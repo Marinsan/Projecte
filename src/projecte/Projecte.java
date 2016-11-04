@@ -16,14 +16,15 @@ public class Projecte {
     /**
      * @param args the command line arguments
      */
+    @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner ent = new Scanner(System.in);
         String model = null, nom = null;
         int carregador = 0, menu;
         double preu = 0.0;
-        boolean camuflatge = false boolean omplit = false;
-        char portacamuflatge = ' ';
+        boolean camuflatge = false, omplit = false;
+        char portacamuflatge = ' ', esS = ' ';
 
         do {
             System.out.println("\n\nMenú de l'aplicació:");
@@ -55,7 +56,7 @@ public class Projecte {
                             portacamuflatge = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
                         } while (portacamuflatge != 'S' && portacamuflatge != 'N');
                         camuflatge = (portacamuflatge == 'S');
-                        
+
                         omplit = true;
                     } else {
                         System.out.println("Ja has introduït dades, si vols omplir-lo esborra'l primer.");
@@ -63,21 +64,119 @@ public class Projecte {
                     break;
 
                 case 2:
-                    
-
+                    if (omplit == true) {
+                        System.out.println("\nModel: " + model);
+                        System.out.println("Nom: " + nom);
+                        System.out.println("Carregador: " + carregador);
+                        System.out.println("Preu:" + preu);
+                        System.out.println("Camuflatge (Si/No): " + camuflatge);
+                    } else {
+                        System.out.println("No hi han dades.");
+                    }
                     break;
+
                 case 3:
+                    if (omplit = true) {
+                        System.out.println("\nVols vore les dades de les armes? (Si/No)");
+                        do {
+                            esS = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Model: " + model);
+                            System.out.println("Nom: " + nom);
+                            System.out.println("Carregador: " + carregador);
+                            System.out.println("Preu:" + preu);
+                            System.out.println("Camuflatge (Si/No): " + camuflatge);
+                        }
+                        System.out.println("\nVols modificar les dades? (Si/No)");
+                        do {
+                            esS = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("\nModel: " + model);
+                        }
+                        System.out.println("\nVols modificar el model? (Si/No)");
+                        do {
+                            esS = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Model: ");
+                            model = ent.skip("[\r\n]*").nextLine();
+                        }
+                        System.out.println("\nNom: " + nom);
+                        System.out.println("\nVols modificar el nom? (Si/No)");
+                        do {
+                            esS = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Nom: ");
+                            nom = ent.skip("[\r\n]*").nextLine();
+                        }
+                        System.out.println("\nCarregador: " + carregador);
+                        System.out.println("\nVols modificar el carregador? (Si/No)");
+                        do {
+                            esS = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Carregador: ");
+                            carregador = ent.skip("[\r\n]*").nextInt();
+                        }
+                        System.out.println("\nPreu: " + preu);
+                        System.out.println("\nVols modificar el Preu? (Si/No)");
+                        do {
+                            esS = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (esS != 'S' && esS != 'N');
+                        if (esS == 'S') {
+                            System.out.println("Preu: ");
+                            preu = ent.skip("[\r\n]*").nextLine();
+                        }
+                        System.out.println("Camuflatge (Si/No): ");
+                        System.out.println("\nVols modificar el camuflatge? (Si/No)");
+                        do {
+                            portacamuflatge = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                        } while (portacamuflatge != 'S' && portacamuflatge != 'N');
+                        camuflatge = (portacamuflatge == 'S');
 
-                    break;
-                case 4:
+                        omplit = true;
 
-                    break;
+                        break;
 
-                default:
-                    System.out.println("Opció erronea.");
-            }
+                    
+            
+            case 4:
+                if (omplit = true) {
+                    System.out.println("\nVols vore les dades? (Si/No)");
+                    do {
+                        esS = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                    } while (esS != 'S' && esS != 'N');
+                    if = (esS == 'S') {
+                     System.out.println("Model: " + model);
+                     System.out.println("Nom: " + nom);
+                     System.out.println("Carregador: " + carregador);
+                     System.out.println("Preu:" + preu);
+                     System.out.println("Camuflatge (Si/No): " + camuflatge);
+                    }
+                    System.out.println("\nSegur que vols borrar les dades? (Si/No)");
+                    do {
+                        esS = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                    } while (esS != 'S' && esS != 'N');
+                    if = (esS == 'S') {
+                        omlpit = false;
+                    System.out.println("\nDades borrades correctament");
+              }else{
+                    System.out.println("\nNo s'han borrat les dades");
+                    }
+            }else{
+                    System.out.println("\nNo hi han dades");
+           }
+            break;
+
+          default:
+                    System.out.println("\nOpció erronea.");
+                    }                } 
         } while (!(menu == 0));
 
-    } 
+        }
 
+    }
 }
